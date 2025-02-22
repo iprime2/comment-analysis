@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'comment_analysis',
 ]
 
-OPENAI_API_KEY = 'YOUR_OPENAI_API_KEY'
+OPENAI_API_KEY = ''
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

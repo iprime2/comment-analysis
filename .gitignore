@@ -38,7 +38,7 @@ backend/!.vscode/launch.json
 backend/!.vscode/extensions.json
 
 # dotenv environment variable files
-backend/.env
+# backend/.env
 backend/.env.development.local
 backend/.env.test.local
 backend/.env.production.local

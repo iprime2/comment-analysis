@@ -9,7 +9,7 @@ export class YoutubeService implements IYoutubeService {
   // private readonly baseUrl = 'https://www.googleapis.com/youtube/v3';
   private readonly baseUrl = process.env.YOUTUBE_API_URL;
   // private readonly djangoApiUrl = 'http://127.0.0.1:8000/api/v1/comments/analyze/';
-  private readonly djangoApiUrl = process.env.DJANGO_API_URL;
+  private readonly djangoApiUrl = process.env.AI_BACKEND_API_URL;
 
   async fetchComments(videoId: GetCommentsDto): Promise<YoutubeComment[]> {
     const url = `${this.baseUrl}/commentThreads`;
@@ -31,6 +31,7 @@ export class YoutubeService implements IYoutubeService {
       }));
       const response = await axios.post(`${this.djangoApiUrl}/comments/analyze/`, { comments });
       return response.data.sentiment;
+      // return comments;
     } catch (error) {
       throw new HttpException(
         `Failed to fetch comments: ${error.response?.data?.error?.message || error.message}`,
